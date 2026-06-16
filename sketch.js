@@ -4,15 +4,22 @@ let pantalon = 0;
 let ropainterior = 0;
 let zapatos = 0;
 
-
-
+let input;
+let button;
 
 
 function setup() 
 {
-	createCanvas(windowWidth, windowHeight);
-    background(255);
+    createCanvas(windowWidth, windowHeight);
+    background(220);
+    input = createInput();
+    input.changed(newText);
+    button = createButton("enviar");
+    button.mousePressed(newText);
+    
 }
+
+
 
 function draw()
 {
@@ -30,3 +37,7 @@ text("chamarra", 400, height/2 + 100);
 text("_", 400, height/2 + 200);
 
 }
+
+function newText(){
+    let text = (input.value());
+    console.log(text);}
