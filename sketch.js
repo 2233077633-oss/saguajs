@@ -1,43 +1,50 @@
+
 let chamarra = 0;
 let playera = 0;
 let pantalon = 0;
 let ropainterior = 0;
 let zapatos = 0;
 
-let input;
-let button;
-
+let buttonColor = 250;
+let buttonColoru = 250;
+let buttonColora = 250;
 
 function setup() 
 {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(1800,1000);
     background(220);
-    input = createInput();
-    input.changed(newText);
-    button = createButton("enviar");
-    button.mousePressed(newText);
-    
 }
-
-
 
 function draw()
 {
-textSize(80);
-fill(0);
-textFont("Timmes New Roman"); 
+    background(220);
+    textSize(80);
+    fill(0);
+    textFont("Times New Roman"); 
 
-text("s/agua", width/2, 100);
-text("¿Cuántas prendas traes el día de hoy?" ,400, height/2);
-text("chamarra", 400, height/2 + 100);
+    text("s/agua", 700, 100);
+    text("¿Cuántas prendas traes el día de hoy?" ,200, 400);
 
-// Desactivar texto sugerido y buscar en referencias de p5.js input text.
-// sustituir valores de variables.
-// condicionales. 
-text("_", 400, height/2 + 200);
-
+    noStroke();
+    fill(buttonColor);
+    square(200,500,150);
+    fill(buttonColoru);
+    square(400,500,150); //botón
+    fill(buttonColora);
+    square(600,500,150);
 }
 
-function newText(){
-    let text = (input.value());
-    console.log(text);}
+function mousePressed() {
+    if (mouseX >= 200 && mouseX <= 350 && mouseY >= 500 && mouseY <= 650) {
+        buttonColor = buttonColor === 255 ? color(0, 200, 0) : 255;
+    }
+
+    if(mouseX >= 400 && mouseX <= 550 && mouseY >= 500 && mouseY <= 650) {
+        buttonColoru = buttonColoru === 255 ? color(0, 200, 0) : 255;
+        
+    }
+    if(mouseX >= 600 && mouseX <= 750 && mouseY >= 500 && mouseY <= 650) {
+        buttonColora = buttonColora === 255 ? color(0, 200, 0) : 255;
+    }
+    
+}
