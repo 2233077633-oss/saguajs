@@ -8,6 +8,7 @@ let zapatos = 0;
 let buttonColor = 250;
 let buttonColoru = 250;
 let buttonColora = 250;
+let buttonColore = 250;
 
 function setup() 
 {
@@ -32,6 +33,9 @@ function draw()
     square(400,500,150); //botón
     fill(buttonColora);
     square(600,500,150);
+    fill(buttonColore);
+    square(800,500,150);
+
 }
 
 function mousePressed() {
@@ -46,5 +50,7 @@ function mousePressed() {
     if(mouseX >= 600 && mouseX <= 750 && mouseY >= 500 && mouseY <= 650) {
         buttonColora = buttonColora === 255 ? color(0, 200, 0) : 255;
     }
-    
+    if(mouseX >= 800 && mouseX <= 950 && mouseY >= 500 && mouseY <= 650) {
+        buttonColore = buttonColore === 255 ? color(0, 200, 0) : 255;
+    }
 }
